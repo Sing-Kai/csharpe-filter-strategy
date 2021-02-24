@@ -31,15 +31,15 @@ namespace OnSiteReportLibrary.src.Filter
         public List<FullOnSite> Filter(string department)
         {
             switch(department){
-                case "Admin":
+                case "A":
                     return Filter(new DeptAFilterStrategy(), OnSiteFilter(_clockedInData));
-                case "Pow":
+                case "B":
                     return Filter(new DeptBFilterStrategy(), OnSiteFilter(_clockedInData));
-                case "Eng":
+                case "C":
                     return Filter(new DeptCFilterStrategy(), OnSiteFilter(_clockedInData));
-                case "Cea":
+                case "D":
                     return Filter(new DeptDFilterStrategy(), OnSiteFilter(_clockedInData));
-                case "AllDeptOnSite":
+                case "All":
                     return OnSiteFilter(_clockedInData);
                 case "Misc":
                     return OffSiteFilter(_clockedInData);
